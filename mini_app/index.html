@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Запрос верификации Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1 id="title">Запрос верификации</h1>
+
+            <!-- Основная форма запроса верификации -->
+            <div id="verification-form">
+                <div class="form-group">
+                    <label for="verification-type">Тип верификации:</label>
+                    <select id="verification-type">
+                        <option value="channel">Канал</option>
+                        <option value="user">Пользователь</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" placeholder="Введите имя канала или пользователя">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Описание:</label>
+                    <textarea id="description" placeholder="Краткое описание"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="followers">Количество подписчиков:</label>
+                    <input type="number" id="followers" placeholder="Например, 1000">
+                </div>
+
+                <div class="form-group">
+                    <label for="content-type">Тип контента:</label>
+                    <select id="content-type">
+                        <option value="Новости">Новости</option>
+                        <option value="Развлечения">Развлечения</option>
+                        <option value="Образование">Образование</option>
+                        <option value="Бизнес">Бизнес</option>
+                        <option value="Технологии">Технологии</option>
+                        <option value="Другое">Другое</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact">Контактная информация:</label>
+                    <input type="text" id="contact" placeholder="Email или номер телефона">
+                </div>
+
+                <button id="submit-btn" class="primary-btn">Отправить запрос</button>
+            </div>
+
+            <!-- Секция для отображения статуса запросов пользователя -->
+            <div id="status-display" class="hidden">
+                <h2>Статус ваших запросов</h2>
+                <div id="requests-list"></div>
+                <button id="new-request-btn" class="secondary-btn">Создать новый запрос</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
